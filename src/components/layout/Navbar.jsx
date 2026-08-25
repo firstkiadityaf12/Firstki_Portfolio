@@ -7,17 +7,41 @@ const Navbar = () => {
 
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
-    const activeSection = useScrollSpy(NAV_LINKS.map(link => link.id));
+    const [currentHash, setCurrentHash] = useState(window.location.hash);
+    const activeSection = useScrollSpy(NAV_LINKS.map(link => link.id), 100);
+    const activeNav = currentHash === '#journey' ? 'journey' : activeSection;
 
     useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 50);
         };
         window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
+        const handleHashChange = () => setCurrentHash(window.location.hash);
+        window.addEventListener("hashchange", handleHashChange);
+        window.addEventListener("popstate", handleHashChange);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+            window.removeEventListener("hashchange", handleHashChange);
+            window.removeEventListener("popstate", handleHashChange);
+        };
     }, []);
 
     const handleNavClick = (sectionId) => {
+        if (sectionId === 'journey') {
+            window.location.hash = 'journey';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            setIsMenuOpen(false);
+            return;
+        }
+
+        if (window.location.hash === '#journey') {
+            window.history.pushState({}, '', window.location.pathname);
+            window.dispatchEvent(new PopStateEvent('popstate'));
+            setTimeout(() => scrollToSection(sectionId), 0);
+            setIsMenuOpen(false);
+            return;
+        }
+
         scrollToSection(sectionId);
         setIsMenuOpen(false);
     }
@@ -46,7 +70,7 @@ const Navbar = () => {
                         <button
                             key={link.id}
                             onClick={() => handleNavClick(link.id)}
-                            className={`text-base font-medium transition-all duration-300 ${activeSection === link.id ? 'text-white' : 'text-white/70 hover:text-white'}`}
+                            className={`text-base font-medium transition-all duration-300 ${activeNav === link.id ? 'text-white' : 'text-white/70 hover:text-white'}`}
                         >
                             {link.label}
                         </button>
@@ -84,7 +108,7 @@ const Navbar = () => {
                         <button
                             key={link.id}
                             onClick={() => handleNavClick(link.id)}
-                            className={`block w-full text-left px-5 py-3 rounded-lg font-medium transition-all duration-300 ${activeSection === link.id ? 'text-white bg-white/10' : 'text-white/70 hover:text-white hover:bg-white/10'}`}
+                            className={`block w-full text-left px-5 py-3 rounded-lg font-medium transition-all duration-300 ${activeNav === link.id ? 'text-white bg-white/10' : 'text-white/70 hover:text-white hover:bg-white/10'}`}
                         >
                             {link.label}
                         </button>

@@ -12,10 +12,9 @@ export const PERSONAL_INFO = {
 };
 
 export const SOCIAL_LINKS = {
-    github: "https://github.com/firstki-dev",
-    linkedin: "https://www.linkedin.com/in/firstki-dev/",
-    twitter: "https://twitter.com/firstki_dev",
-    instagram: "https://www.instagram.com/firstki_dev/"
+    github: "https://github.com/firstkiadityaf12",
+    linkedin: "https://www.linkedin.com/in/firstkiaditya/",
+    instagram: "https://www.instagram.com/firstkiadityaf/"
 };
 
 export const STATS = [

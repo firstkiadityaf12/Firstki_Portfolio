@@ -3,14 +3,14 @@ export const skills = [
         id: 1,
         name: 'Kali Linux',
         level: 'Advanced',
-        icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Kali-dragon-icon.svg/1200px-Kali-dragon-icon.svg.png',
+        icon: '/images/kalilinux.png',
         experience: '3 years'
     },
     {
         id: 2,
         name: 'Burp Suite',
         level: 'Intermediate',
-        icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/BurpSuite_logo.svg/2048px-BurpSuite_logo.svg.png',
+        icon: '/images/burpsuite.png',
         experience: '2 years'
     },
     {
