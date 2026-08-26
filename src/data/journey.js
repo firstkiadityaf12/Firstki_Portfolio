@@ -27,22 +27,22 @@ export const journey = [
 
 export const certifications = [
     {
-        title: "Nama Sertifikasi 1",
-        issuer: "Penerbit sertifikasi",
-        year: "2024",
-        credentialUrl: "#"
+        title: "Problem Solving (Basic) Certificate",
+        issuer: "HackerRank",
+        year: "2026",
+        credentialUrl: "https://www.hackerrank.com/certificates/iframe/e895c1b8d2b3"
     },
     {
-        title: "Nama Sertifikasi 2",
-        issuer: "Penerbit sertifikasi",
-        year: "2024",
-        credentialUrl: "#"
+        title: "Web Penetration Testing Course",
+        issuer: "CYBERACADEMY",
+        year: "2023",
+        credentialUrl: "https://sert-cyberacademyid.s3.ap-southeast-3.amazonaws.com/course/adityafernanda20131650637859/Certificate-of-Completion-Web-Penetration-Testing.pdf"
     },
     {
-        title: "Nama Sertifikasi 3",
-        issuer: "Penerbit sertifikasi",
-        year: "2025",
-        credentialUrl: "#"
+        title: "Introduction to Data Science with Python",
+        issuer: "DQLab",
+        year: "2022",
+        credentialUrl: "https://drive.google.com/file/d/1A55Bn2_MM2pyrHmtLDavHCHvAkPGEsCi/view"
     }
 ];
 
