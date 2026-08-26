@@ -1,5 +1,5 @@
-import { ArrowLeft, Award, ExternalLink, Flag, Images, ShieldCheck } from "lucide-react";
-import { certifications, journey, journeyPhotos } from "../../data/journey";
+import { ArrowLeft, Award, ExternalLink, Flag, Images, Medal, ShieldCheck } from "lucide-react";
+import { achievements, certifications, journey, journeyPhotos } from "../../data/journey";
 import { scrollToSection } from "../../hooks/useScrollSpy";
 import FadeIn from "../animations/FadeIn";
 
@@ -54,7 +54,11 @@ const Journey = () => {
                                             <h2 className="mt-2 text-2xl font-normal text-white">{item.title}</h2>
                                         </div>
                                         <div className="border-l border-white/10 pl-5 md:border-l-0 md:pl-0">
-                                            <p className="text-base leading-relaxed text-white/60">{item.description}</p>
+                                            <ul className="list-disc pl-5 space-y-1 text-gray-300">
+                                                {item.description.map((point, index) => (
+                                                    <li key={index}>{point.replace("• ", "")}</li>
+                                                ))}
+                                            </ul>
                                         </div>
                                     </article>
                                 </FadeIn>
@@ -74,7 +78,7 @@ const Journey = () => {
                                 </div>
                                 <h2 className="text-3xl font-normal text-white md:text-4xl">Milestones I&apos;ve earned.</h2>
                             </div>
-                            <p className="max-w-sm text-sm leading-relaxed text-white/50"></p>A list of certifications supporting my journey in cybersecurity.
+                            <p className="max-w-sm text-sm leading-relaxed text-white/50">A list of certifications supporting my journey in cybersecurity.</p>
                         </div>
 
                         <div className="mt-8 grid gap-4 md:grid-cols-3">
@@ -94,6 +98,41 @@ const Journey = () => {
                                 </a>
                             ))}
                         </div>
+                        </section>
+                    </FadeIn>
+                )}
+
+                {achievements.length > 0 && (
+                    <FadeIn delay={250}>
+                        <section className="mt-24 border-t border-white/10 pt-16">
+                            <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+                                <div>
+                                    <div className="mb-3 flex items-center gap-2 text-primary">
+                                        <Medal className="h-5 w-5" />
+                                        <span className="text-sm font-medium uppercase tracking-[0.16em]">Achievements</span>
+                                    </div>
+                                    <h2 className="text-3xl font-normal text-white md:text-4xl">Highlights I&apos;ve earned.</h2>
+                                </div>
+                                <p className="max-w-sm text-sm leading-relaxed text-white/50">A selection of competition results and recognition from my professional journey.</p>
+                            </div>
+
+                            <div className="mt-8 grid gap-4 md:grid-cols-3">
+                                {achievements.map((achievement) => (
+                                    <a
+                                        key={achievement.title}
+                                        href={achievement.credentialUrl}
+                                        className="group border border-white/10 bg-white/[0.03] p-5 transition-colors hover:border-primary/60 hover:bg-primary/[0.06]"
+                                    >
+                                        <div className="flex items-start justify-between gap-4">
+                                            <Medal className="h-6 w-6 shrink-0 text-primary" />
+                                            {achievement.credentialUrl !== "#" && <ExternalLink className="h-4 w-4 text-white/40 transition-colors group-hover:text-white" />}
+                                        </div>
+                                        <h3 className="mt-8 text-lg font-medium text-white">{achievement.title}</h3>
+                                        <p className="mt-2 text-sm text-white/50">{achievement.issuer}</p>
+                                        <p className="mt-4 text-xs uppercase tracking-[0.14em] text-primary">{achievement.year}</p>
+                                    </a>
+                                ))}
+                            </div>
                         </section>
                     </FadeIn>
                 )}
