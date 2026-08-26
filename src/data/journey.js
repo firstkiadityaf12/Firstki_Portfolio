@@ -1,7 +1,7 @@
 export const journey = [
     {
-        period: "Vocational High School | The Start of the JourneySMK | Awal Perjalanan",
-        title: "Getting to Know Cybersecurity through Student WorksheetsMengenal Cybersecurity lewat LKS",
+        period: "Vocational High School | The Start of the Journey",
+        title: "Getting to Know Cybersecurity through Student Worksheets",
         description: "Began a journey into the world of cybersecurity through the LKS competition for vocational high schools, fostering a curiosity about system security, networking, and ethical hacking.",
         accent: "01"
     },
