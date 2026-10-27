@@ -6,7 +6,7 @@ import FadeIn from "../animations/FadeIn";
 
 const Services = () => {
     return (
-        <section id="services" className="relative py-5 md:py-5 bg-black overflow-hidden">
+        <section id="services" className="relative py-5 md:py-5 bg-white overflow-hidden">
             <div className="absolute inset-0 overflow-hidden">
                 <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 opacity-20 rounded-full blur-3xl"/>
                 <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/20 opacity-20 rounded-full blur-3xl"/>
@@ -15,7 +15,7 @@ const Services = () => {
 
             <div className="absolute inset-0 opacity-[0.03]"
                 style={{
-                    backgroundImage: `linear-gradient(to right, white 1px, transparent 1px) linear-gradient(to bottom, white 1px, transparent 1px)`,
+                    backgroundImage: `linear-gradient(to right, black 1px, transparent 1px) linear-gradient(to bottom, black 1px, transparent 1px)`,
                     backgroundSize: '30px 30px'
                 }}
             />
@@ -27,10 +27,10 @@ const Services = () => {
                             <Wrench className="w-4 h-4 text-primary" />
                             <span className="text-sm text-primary font-medium tracking-wider uppercase">What I Offer</span>
                         </div>
-                        <h2 className="text-2xl lg:text-5xl font-normal text-white mb-4 max-w-2xl mx-auto">
+                        <h2 className="text-2xl lg:text-5xl font-normal text-black mb-4 max-w-2xl mx-auto">
                             Save Time, Enhance Security, and Boost Efficiency with My Cybersecurity Services
                         </h2>
-                        <p className="text-lg text-white/60 max-w-2xl mx-auto">
+                        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                             I provide a range of cybersecurity services tailored to meet your specific needs and protect your digital assets.
                         </p>
                     </div>
@@ -41,13 +41,13 @@ const Services = () => {
                         const IconComponent = Icons[service.icon] || Icons.Code
                         return (
                             <FadeIn key={service.id} delay={(index + 1) * 100}>
-                                <div className="bg-black/30 border border-white/10 rounded-2xl p-6 hover:border-primary/50 transition-all duration-300 flex items-start gap-4">
+                                <div className="bg-white border border-gray-300 rounded-2xl p-6 hover:border-primary/50 transition-all duration-300 flex items-start gap-4">
                                     <div className="flex-shrink-0">
                                         <IconComponent className="w-8 h-8 text-primary" />
                                     </div>
                                     <div className="ml-4">
-                                        <h3 className="text-xl font-medium text-white">{service.title}</h3>
-                                        <p className="text-white/60">{service.description}</p>
+                                        <h3 className="text-xl font-medium text-black">{service.title}</h3>
+                                        <p className="text-gray-700">{service.description}</p>
                                     </div>
                                 </div>
                             </FadeIn>
@@ -58,13 +58,13 @@ const Services = () => {
                         const IconComponent = Icons[service.icon] || Icons.Code
                         return (
                             <FadeIn key={service.id} delay={(index + 1) * 100}>
-                                <div className="bg-black/30 border border-white/10 rounded-2xl p-6 hover:border-primary/50 transition-all duration-300 flex items-start gap-4">
+                                <div className="bg-white border border-gray-300 rounded-2xl p-6 hover:border-primary/50 transition-all duration-300 flex items-start gap-4">
                                     <div className="flex-shrink-0">
                                         <IconComponent className="w-8 h-8 text-primary" />
                                     </div>
                                     <div className="ml-4">
-                                        <h3 className="text-xl font-medium text-white">{service.title}</h3>
-                                        <p className="text-white/60">{service.description}</p>
+                                        <h3 className="text-xl font-medium text-black">{service.title}</h3>
+                                        <p className="text-gray-700">{service.description}</p>
                                     </div>
                                 </div>
                             </FadeIn>

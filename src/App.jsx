@@ -7,6 +7,7 @@ import Projects from './components/sections/Projects';
 import Services from './components/sections/Services';
 import ContactBanner from './components/sections/ContactBanner';
 import Journey from './components/sections/Journey';
+import Footer from './components/layout/Footer';
 
 const App = () => {
   const [isJourneyPage, setIsJourneyPage] = useState(window.location.hash === '#journey');
@@ -23,10 +24,14 @@ const App = () => {
   }, []);
 
   return (
-    <div className='min-h-screen bg-black pb-[10vh]'>
+    <div className='min-h-screen bg-white flex flex-col'>
       <Navbar />
-      {isJourneyPage ? <Journey /> : (
-        <main>
+      {isJourneyPage ? (
+        <div className="flex-1">
+          <Journey />
+        </div>
+      ) : (
+        <main className="flex-1">
             <Hero/>
             <About/>
             <Skills/>
@@ -35,6 +40,7 @@ const App = () => {
             <ContactBanner/>
         </main>
       )}
+      <Footer />
     </div>
   );
 }

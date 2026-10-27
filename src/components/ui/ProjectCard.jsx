@@ -5,7 +5,7 @@ const ProjectCard = ({ project }) => {
     const { title, description, image, technologies, metrics, demoUrl, githubUrl } = project;
     
     return (
-        <div className="group relative bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-primary/30 transition-all duration-300">
+        <div className="group relative bg-white border border-gray-300 rounded-2xl overflow-hidden hover:border-primary/30 transition-all duration-300">
             <div className="relative h-64 overflow-hidden">
                 <img 
                     src={image} 
@@ -21,7 +21,7 @@ const ProjectCard = ({ project }) => {
                             href={demoUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="p-2.5 bg-white/10 backdrop-blur-md rounded-lg border border-white/20 hover:bg-primary/10 text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-2"
+                            className="p-2.5 bg-black/60 backdrop-blur-md rounded-lg border border-black/40 hover:bg-primary hover:text-white text-black transition-colors inline-flex items-center gap-2"
                         >
                             <ExternalLink className="w-4 h-4" />
                             Live Demo
@@ -32,7 +32,7 @@ const ProjectCard = ({ project }) => {
                             href={githubUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="p-2.5 bg-white/10 backdrop-blur-md rounded-lg border border-white/20 hover:bg-primary/10 text-primary hover:text-primary/80 transition-colors inline-flex items-center gap-2"
+                            className="p-2.5 bg-black/60 backdrop-blur-md rounded-lg border border-black/40 hover:bg-primary hover:text-white text-black transition-colors inline-flex items-center gap-2"
                         >
                             <TrendingUp className="w-4 h-4" />
                             GitHub
@@ -41,7 +41,7 @@ const ProjectCard = ({ project }) => {
                 </div>
 
                 <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 text-xs font-medium text-white bg-black/40 backdrop-blur-md rounded-full border border-white/20">
+                    <span className="px-3.5 py-1.5 text-xs font-semibold tracking-wide uppercase text-white bg-black rounded-md border border-white/20 shadow-sm shadow-black/30 hover:bg-gray-800 hover:border-white/40 transition-all duration-300">
                         {project.category}
                     </span>
                 </div>
@@ -49,15 +49,15 @@ const ProjectCard = ({ project }) => {
 
             <div className="p-6 space-y-4">
                 <div>
-                    <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-primary transition-colors">{title}</h3>
-                    <p className="text-gray-300">{description}</p>
+                    <h3 className="text-xl font-semibold text-black mb-2 group-hover:text-primary transition-colors">{title}</h3>
+                    <p className="text-gray-700">{description}</p>
                 </div>
 
                 <div className="flex flex-wrap">
                     {technologies.map((tech, index) => (
                         <span 
                             key={index}
-                            className="inline-block bg-secondary text-secondary-foreground text-xs px-2 py-1 rounded mr-2 mb-2"
+                            className="inline-block bg-gray-200 text-gray-800 text-xs px-2 py-1 rounded mr-2 mb-2"
                         >
                             {tech}
                         </span>
@@ -68,7 +68,7 @@ const ProjectCard = ({ project }) => {
                     <div className="mt-4">
                         <TrendingUp className="inline-block w-4 h-4 mr-2 text-primary" />
                         {Object.entries(JSON.parse(metrics)).map(([key, value], index) => (
-                            <span key={index} className="inline-block mr-2">
+                            <span key={index} className="inline-block mr-2 text-gray-700">
                                 {key}: {value}
                             </span>
                         ))}

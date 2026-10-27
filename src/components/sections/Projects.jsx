@@ -48,7 +48,7 @@ const Projects = () => {
     };
 
     return (
-        <section id="projects" className="relative py-20 bg-black overflow-hidden">
+        <section id="projects" className="relative py-20 bg-white overflow-hidden">
            <div className="absolute inset-0 overflow-hidden">
                 <div className="absolute top-1/3 right-0 w-96 h-96 bg-primary/20 opacity-20 rounded-full blur-3xl"/>
                 <div className="absolute bottom-1/3 left-0 w-96 h-96 bg-primary/20 opacity-20 rounded-full blur-3xl"/>
@@ -62,8 +62,8 @@ const Projects = () => {
                             <Briefcase className="w-6 h-6 text-primary" />
                             <span className="text-sm text-primary font-medium">My Work</span>
                         </div>
-                        <h2 className='text-2xl lg:text-5xl font-normal text-white'>Featured Projects</h2>
-                        <p className='text-lg text-white/60 max-w-2xl mx-auto'>A showcase of my recent work and projects.</p>
+                        <h2 className='text-2xl lg:text-5xl font-normal text-black'>Featured Projects</h2>
+                        <p className='text-lg text-gray-600 max-w-2xl mx-auto'>A showcase of my recent work and projects.</p>
                     </div>
                 </FadeIn>
 
@@ -76,24 +76,14 @@ const Projects = () => {
                                 onClick={() => handleCategoryChange(category)}
                                 className={`group relative px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                                     activeCategory === category
-                                        ? 'text-white'
-                                        : 'text-white/60 hover:text-white'
+                                        ? 'bg-black text-white border border-black shadow-lg shadow-black/40'
+                                        : 'bg-transparent text-black border border-black hover:bg-gray-100'
                                 }`}
-                            >         
-                                <div className={`absolute inset-0 rounded-full transition-all duration-300 ${
-                                    activeCategory === category
-                                        ? 'bg-primary/10 opacity-100'
-                                        : 'bg-white/5 border border-white/10 opacity-0 group-hover:opacity-100'
-                                }`}/>
-
+                            >
                                 <div className="relative flex items-center gap-2">
                                     {React.createElement(categoryIcons[category], {className: 'w-5 h-5'})}
                                     <span className="text-sm">{category}</span>
                                 </div>
-
-                                {activeCategory === category && (
-                                    <div className="absolute inset-0 rounded-full bg-primary blur-xl opacity-50 -z-10"/>
-                                )}
                             </button>
                         ))}
                     </div>
@@ -121,7 +111,7 @@ const Projects = () => {
                                 <button
                                     onClick={prevSlide}
                                     disabled={currentIndex === 0}
-                                    className="flex absolute left-0 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full m-4"
+                                    className="flex absolute left-0 top-1/2 -translate-y-1/2 bg-white/50 hover:bg-white/70 text-black p-2 rounded-full m-4"
                                     aria-label="Previous Projects"
                                 >
                                     <ChevronLeft className="w-6 h-6" />
@@ -129,7 +119,7 @@ const Projects = () => {
                                 <button
                                     onClick={nextSlide}
                                     disabled={currentIndex >= filteredProjects.length - 3}
-                                    className="flex absolute right-0 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full m-4"
+                                    className="flex absolute right-0 top-1/2 -translate-y-1/2 bg-white/50 hover:bg-white/70 text-black p-2 rounded-full m-4"
                                     aria-label="Next Projects"
                                 >
                                     <ChevronRight className="w-6 h-6" />
@@ -145,7 +135,7 @@ const Projects = () => {
                                         key={idx}
                                         onClick={() => scrollToIndex(idx)}
                                         className={`mx-1 w-3 h-3 rounded-full transition-all duration-300 ${
-                                            currentIndex === idx ? 'bg-white' : 'bg-white/40'
+                                            currentIndex === idx ? 'bg-black' : 'bg-gray-400'
                                         }`}
                                     />
                                 ))}
