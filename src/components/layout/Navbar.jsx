@@ -47,7 +47,7 @@ const Navbar = () => {
     }
 
     return (
-        <nav className={`fixed top-4 left-2 right-2 md:top-6 md:left-1/2 md:right-auto md:-translate-x-1/2 z-1000 transition-all duration-300 ${isScrolled ? 'bg-white/25 backdrop-blur-lg border border-white/40' : 'bg-white/15 backdrop-blur-md border border-white/30'} rounded-full py-3 px-4 md:px-8`}>
+        <nav className={`fixed top-4 left-2 right-2 md:top-6 md:left-1/2 md:right-auto md:-translate-x-1/2 z-1000 transition-all duration-300 ${isScrolled ? 'bg-white/25 backdrop-blur-lg border border-white/40' : 'bg-white/15 backdrop-blur-md border border-white/30'} ${isMenuOpen ? 'rounded-2xl' : 'rounded-full'} md:rounded-full py-3 px-4 md:px-8`}>
             <div className='flex items-center justify-between md:justify-center gap-3 sm:gap-4 md:gap-8'>
                 {/* logo */}
                 <div className='flex items-center gap-2 flex-shrink-0'>
